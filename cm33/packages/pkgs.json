@@ -1,7 +1,0 @@
-[
- {
-  "name": "NXP_IMXRT_DRIVER",
-  "path": "/packages/peripherals/hal-sdk/nxp/nxp-imxrt-sdk",
-  "ver": "latest"
- }
-]

@@ -296,6 +296,11 @@ SECTIONS
     . = ALIGN(32);
     __ram_function_start__ = .;
     *(CodeQuickAccess)
+    /* The FlexSPI drivers must run from TCM while the flash is being
+       reconfigured, mirroring the Keil/IAR QuickAccess placement. */
+    *fsl_flexspi.o(.text*)
+    *drv_flexspi_nor_flash.o(.text*)
+    *drv_flexspi.o(.text*)
     . = ALIGN(128);
     __ram_function_end__ = .;
   } > m_qacode
