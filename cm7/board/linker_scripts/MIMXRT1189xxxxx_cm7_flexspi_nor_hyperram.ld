@@ -131,8 +131,8 @@ SECTIONS
   .text :
   {
     . = ALIGN(4);
-    *(.text)                 /* .text sections (code) */
-    *(.text*)                /* .text* sections (code) */
+    *(EXCLUDE_FILE(*fsl_flexspi.o *drv_flexspi_nor_flash.o *drv_flexspi.o) .text)
+    *(EXCLUDE_FILE(*fsl_flexspi.o *drv_flexspi_nor_flash.o *drv_flexspi.o) .text*)
     *(.rodata)               /* .rodata sections (constants, strings, etc.) */
     *(.rodata*)              /* .rodata* sections (constants, strings, etc.) */
     *(.glue_7)               /* glue arm to thumb code */
